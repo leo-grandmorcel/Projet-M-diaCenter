@@ -3,21 +3,21 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    author = "Charles Dickens"
+    title = "Media Center"
     name = "Audren"
-    return render_template('index.html', author=author, name=name)
+    return render_template('index.html', title=title, name=name)
 
-email_addresses = []
+reseaux_user = []
 @app.route('/signup', methods = ['POST'])
 def signup():
-    email = request.form['email']
-    email_addresses.append(email)
-    print(email_addresses)
+    reseaux = request.form['reseaux']
+    reseaux_user.append(reseaux)
+    print(reseaux_user)
     return redirect('/')
 
-@app.route('/emails.html')
+@app.route('/reseaux.html')
 def emails():
-    return render_template('emails.html', email_addresses=email_addresses)
+    return render_template('reseaux.html', reseaux_user=reseaux_user)
 
 if __name__ == "__main__":
     app.run()
