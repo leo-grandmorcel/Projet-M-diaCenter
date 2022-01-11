@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Réseaux personnalisés</title>
+  </head>
+  <body>
+    <p>Voici tous les réseaux que vous avez rentrés:</p>
+    <ul>
+      {% for reseaux in reseaux_user %}
+      <li>{{ reseaux }}</li>
+      {% endfor %}
+    </ul>
+    <p></p>
+  </body>
+</html>

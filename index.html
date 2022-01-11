@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <div style="text-align:center">
+        <h2>Médiacenter</h2>
+    </div>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="form.css">
+
+
+</head>
+<body>
+
+    <div style="text-align:center">
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:160px;"><strong>Se connecter</strong></button>
+    </div>
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Nom d'utilisateur</b></label>
+      <input type="text" placeholder="Nom d'utilisateur" name="uname" required>
+
+      <label for="psw"><b>Mot de passe</b></label>
+      <input type="password" placeholder="Mot de passe" name="psw" required>
+        
+      <button type="submit">Se connecter</button>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+<div style="text-align:center">
+    <button onclick="document.getElementById('signUp').style.display='block'" style="width:160px;"><strong>S'inscrire</strong></button>
+    </div>
+<div id="signUp" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('signUp').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Adresse mail</b></label>
+      <input type="email" placeholder="exemple@mail.com" name="uname" required>
+
+      <label for="psw"><b>Mot de passe</b></label>
+      <input type="password" placeholder="Exemple123" name="psw" required>
+        
+      <button type="submit">S'inscrire</button>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('signUp').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('signUp');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+</body>
+</html>
