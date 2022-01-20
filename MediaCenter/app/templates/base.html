@@ -1,15 +1,19 @@
 <!doctype html>
 <html>
     <head>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+        </style>
         {% if title %}
-        <title>{{ title }} - Microblog</title>
+        <title>{{ title }} - Mediacenter</title>
         {% else %}
-        <title>Welcome to Microblog</title>
+        <title>Welcome to Mediacenter</title>
         {% endif %}
     </head>
     <body>
         <div>
-            Microblog:
+            Mediacenter:
             <a href="{{ url_for('index') }}">Home</a>
             <a href="{{ url_for('explore') }}">Explore</a>
             {% if current_user.is_anonymous %}
