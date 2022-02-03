@@ -20,6 +20,7 @@ if [[ ! -d /srv/backup/conf/ ]]
 then
     sudo mkdir /srv/backup/conf
 fi
+
 if [ "$(ls -A /var/www/ 2> /dev/null)" ]
 then
     name=("/srv/backup/server/server_$(date +"%y%m%d_%H%m%S").tar.gz")
@@ -38,3 +39,10 @@ then
     cd /var/lib/mysql
     /usr/bin/tar -czvf "$name" * &> /dev/null
 fi
+if [ "$(ls -A / 2> /dev/null)" ]
+then
+    name=("/srv/backup/db/db_$(date +"%y%m%d_%H%m%S").tar.gz")
+    cd /var/lib/mysql
+    /usr/bin/tar -czvf "$name" * &> /dev/null
+fi
+
