@@ -9,8 +9,12 @@ usage() {
 }
 
 user(){
-     adduser $newuser
-    echo "User $newuser add."
+	groupadd dev &> /dev/null
+   	useradd -m -s /bin/bash $newuser 
+	usermod -aG dev $newuser 
+	usermod -aG sudo $newuser
+	passwd $newuser
+	echo "User $newuser add."
 }
 
 pinger(){
@@ -27,9 +31,10 @@ pinger(){
 }
 
 namer(){
-    sudo hostname $newname
+    hostname $newname
     lastname=$(cat /etc/hostname)
-    sudo sed -i "s/$lastname/$newname/g" /etc/hostname
+    sed -i "s/$lastname/$newname/g" /etc/hostname
+    sed -i "s/localhost/$newname/g" /etc/hosts
 }
 
 if [[ "$(id -u)" != "0" ]] ; then
@@ -39,19 +44,15 @@ fi
 
 echo "Lancement de l'installation"
 
-while getopts ":hi:u:n:" option; do
+while getopts ":hu:n:" option; do
     case "${option}" in
         h)
             usage
-	    exit 0
-            ;;
-        i)
-            newip=${OPTARG}
-            iper
+	    	exit 0
             ;;
         u)
             newuser=${OPTARG}
-            user
+	    user
             ;;
         n)
             newname=${OPTARG}
@@ -66,12 +67,13 @@ while getopts ":hi:u:n:" option; do
 done
 
 pinger
-sudo apt update
+apt update
+apt install sudo
 
 while true; do
     read -p "Reboot to save all changes Y/N" yn
     case $yn in
-        [Yy]* ) sudo reboot; break;;
+        [Yy]* ) reboot; break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
