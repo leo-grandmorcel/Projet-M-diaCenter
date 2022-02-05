@@ -13,7 +13,6 @@ user(){
    	useradd -m -s /bin/bash $newuser 
 	usermod -aG dev $newuser 
 	usermod -aG sudo $newuser
-	passwd $newuser
 	echo "User $newuser add."
 }
 

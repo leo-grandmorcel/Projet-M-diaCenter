@@ -12,14 +12,16 @@ fi
 netdata() {
 	apt install netdata wget
 	wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/netdata-kickstart.sh --disable-telemetry
+	ip=$(ip a | grep 'inet ' | grep 'global' | tr -s ' ' | cut -d' ' -f3 | cut -d'/' -f1)
 	echo "Create a webhook by following the official documentation -"
 	echo "https://support.discordapp.com/hc/en-us/articles/228383668-Intro-to-Webhooks"
 	read -p "GIVE THE DISCORD WEBHOOK URL" webhook
-	sed -i "s#DISCORD_WEBHOOK_URL=\"\"#DISCORD_WEBHOOK_URL=\"$webhook\"#g" /etc/netdata/health_alarm_notify.conf
-	sed -i "s#DEFAULT_RECIPIENT_DISCORD=\"\"#DEFAULT_RECIPIENT_DISCORD=\"alarms\"#g" /etc/netdata/health_alarm_notify.conf
-	sed -i "s#SEND_DISCORD=\"NO\"#SEND_DISCORD=\"YES\"#g" /etc/netdata/health_alarm_notify.conf
+	sudo sed -i "s#DISCORD_WEBHOOK_URL=\"\"#DISCORD_WEBHOOK_URL=\"$webhook\"#g" /usr/lib/netdata/conf.d/health_alarm_notify.conf
+	sudo sed -i "s#DEFAULT_RECIPIENT_DISCORD=\"\"#DEFAULT_RECIPIENT_DISCORD=\"alarms\"#g" /usr/lib/netdata/conf.d/health_alarm_notify.conf
+	sudo sed -i "s#SEND_DISCORD=\"NO\"#SEND_DISCORD=\"YES\"#g" /usr/lib/netdata/conf.d/health_alarm_notify.conf
+	sudo sed -i "s/127.0.0.1/$ip/g" /etc/netdata/netdata.conf
 	systemctl restart netdata
-	echo "NetData is installed you can access it to <ip>:19999"
+	echo "NetData is installed you can access it to $ip:19999"
 }
 #nginx
 nginx() {
