@@ -10,10 +10,9 @@ fi
 
 #netdate
 netdata() {
-	apt install netdata wget
-	wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/netdata-kickstart.sh --disable-telemetry
+	apt-get install -y netdata
 	ip=$(ip a | grep 'inet ' | grep 'global' | tr -s ' ' | cut -d' ' -f3 | cut -d'/' -f1)
-	echo "Create a webhook by following the official documentation -"
+	echo "Create a webhook by following the official documentation - \n"
 	echo "https://support.discordapp.com/hc/en-us/articles/228383668-Intro-to-Webhooks"
 	read -p "GIVE THE DISCORD WEBHOOK URL" webhook
 	sudo sed -i "s#DISCORD_WEBHOOK_URL=\"\"#DISCORD_WEBHOOK_URL=\"$webhook\"#g" /usr/lib/netdata/conf.d/health_alarm_notify.conf
@@ -23,10 +22,11 @@ netdata() {
 	systemctl restart netdata
 	echo "NetData is installed you can access it to $ip:19999"
 }
+
 #nginx
 nginx() {
-	apt install nginx snapd
-	apt remove certbot
+	apt-get install -y nginx snapd
+	apt-get remove -y certbot
 	snap install core
 	snap refresh core
 	snap install --classic certbot
