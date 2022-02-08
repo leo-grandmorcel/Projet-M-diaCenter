@@ -13,6 +13,7 @@ user(){
    	useradd -m -s /bin/bash $newuser 
 	usermod -aG dev $newuser 
 	usermod -aG sudo $newuser
+    passwd $newuser
 	echo "User $newuser add."
 }
 
@@ -66,8 +67,8 @@ while getopts ":hu:n:" option; do
 done
 
 pinger
-apt update
-apt install sudo
+apt-get update
+apt-get install -y sudo
 
 while true; do
     read -p "Reboot to save all changes Y/N" yn

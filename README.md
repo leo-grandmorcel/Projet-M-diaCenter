@@ -5,6 +5,14 @@ Pour le script "Setup.sh" Soyez sûr d'avoir le nom de domaine de votre serveur.
 
 Télécharger le dossier git
 
+<<<<<<< HEAD
 ssh-keygen -t rsa -b 4096
 ssh-copy-id <user>@<ip>
 scp -r <file> <user>@<ip>:<path>
+=======
+https://discord.com/api/webhooks/938775610711494676/dUHKm2RakTmY20zMaN4lGerECtHj5KnGT2rY9kPNsb050WnXXDvZVuYz8Q7q0nJFOSqP
+
+TEST NETDATA BOT DISCORD
+cd /usr/libexec/netdata/plugins.d/
+./alarm-notify test
+>>>>>>> 7b97eea2bb6390d1c843170152d973d22e6fbaeb
