@@ -4,6 +4,13 @@ Pour le script "preset.sh" Soyez sûr d'avoir le nom que vous voulez donner à v
 Pour le script "Setup.sh" Soyez sûr d'avoir le nom de domaine de votre serveur. Si vous utilisez certbot, il vous faudra une adresse mail pour le certificat, et le nom de domaine.
 
 Télécharger le dossier git
+<<<<<<< HEAD
+=======
+
+ssh-keygen -t rsa -b 4096
+ssh-copy-id <user>@<ip>
+scp -r <file> <user>@<ip>:<path>
+>>>>>>> 5b2d0944453bb9f0870a8a4bc8570831b7e90a77
 
 <<<<<<< HEAD
 ssh-keygen -t rsa -b 4096
@@ -15,4 +22,7 @@ https://discord.com/api/webhooks/938775610711494676/dUHKm2RakTmY20zMaN4lGerECtHj
 TEST NETDATA BOT DISCORD
 cd /usr/libexec/netdata/plugins.d/
 ./alarm-notify test
+<<<<<<< HEAD
 >>>>>>> 7b97eea2bb6390d1c843170152d973d22e6fbaeb
+=======
+>>>>>>> 5b2d0944453bb9f0870a8a4bc8570831b7e90a77
