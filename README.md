@@ -1,12 +1,10 @@
-ON A DU BOULOT
+Automatiser l'installation d'un serveur
 
-apt install sudo ssh
-systectm start sshd.service
+Pour le script "preset.sh" Soyez sûr d'avoir le nom que vous voulez donner à votre machine, le nom du user que vous voulez créer.
+Pour le script "Setup.sh" Soyez sûr d'avoir le nom de domaine de votre serveur. Si vous utilisez certbot, il vous faudra une adresse mail pour le certificat, et le nom de domaine.
 
-ssh-copy-id <username>@<ip>
-scp <file> <username>@<ip>:<path>
+Télécharger le dossier git
 
-
-TEST NETDATA BOT DISCORD
-cd /usr/libexec/netdata/plugins.d/
-./alarm-notify test
+ssh-keygen -t rsa -b 4096
+ssh-copy-id <user>@<ip>
+scp -r <file> <user>@<ip>:<path>

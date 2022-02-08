@@ -18,12 +18,12 @@ user(){
 
 pinger(){
     ping -q -c 4 1.1.1.1 &> /dev/null
-    if [ $# != 0 ]
+    if [ $? != 0 ]
     then
         echo "No internet connexion."
     fi
     ping -q -c 4 google.com &> /dev/null
-    if [ $# != 0 ]
+    if [ $? != 0 ]
     then
         echo "No resolution name in ping google.com"
     fi
