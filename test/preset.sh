@@ -14,17 +14,17 @@ user(){
 	usermod -aG dev $newuser 
 	usermod -aG sudo $newuser
     passwd $newuser
-	echo "User $newuser add."
+	echo "User $newuser added."
 }
 
 pinger(){
     ping -q -c 4 1.1.1.1 &> /dev/null
-    if [ $# != 0 ]
+    if [ $? != 0 ]
     then
         echo "No internet connexion."
     fi
     ping -q -c 4 google.com &> /dev/null
-    if [ $# != 0 ]
+    if [ $? != 0 ]
     then
         echo "No resolution name in ping google.com"
     fi

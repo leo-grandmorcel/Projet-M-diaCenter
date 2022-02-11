@@ -1,14 +1,40 @@
-ON A DU BOULOT
+Automatiser l'installation d'un serveur
+=======
 
-apt install sudo ssh  
-systectm start sshd.service
+Pour lancer votre serveur web vous allez avoir besoin d'au minimum une machine sous Debian(11 de préférence).  
+Votre machine devra avoir au moins 4Go de ram et 1 CPU.
 
-ssh-copy-id <username>@<ip>  
-scp <file> <username>@<ip>:<path>
+> Nous conseillons l'utilisations de machine virtuelles telles que des VPS pour l'installation du serveur.
+
+Ensuite, téléchargez simplement ce dépôt git sur votre machine et lancez les scripts "preset.sh" puis "Setup.sh" avec les commandes suivantes:
+
+```
+sudo bash Preset.sh -u utilisateur -n "nomdelamachine"
+
+...
+
+sudo bash Setup.sh -m -n -c -e adressemail -d "nomdedomaine"
+```
+
+Vous devez donc avoir un accès root ou administrateur sur votre machine pour que le script s'éxecute correctement.
+
+Pour le script "preset.sh" Soyez sûr d'avoir le nom que vous voulez donner à votre machine, le nom du user que vous voulez créer.
+Pour le script "Setup.sh" Soyez sûr d'avoir le nom de domaine de votre serveur. Si vous utilisez certbot, il vous faudra une adresse mail pour le certificat, et le nom de domaine.
+
+Télécharger le dossier git
+=======
+
+ssh-keygen -t rsa -b 4096
+ssh-copy-id <user>@<ip>
+scp -r <file> <user>@<ip>:<path>
+> 5b2d0944453bb9f0870a8a4bc8570831b7e90a77
+ssh-keygen -t rsa -b 4096
+ssh-copy-id <user>@<ip>
+scp -r <file> <user>@<ip>:<path>
+=======
+https://discord.com/api/webhooks/938775610711494676/dUHKm2RakTmY20zMaN4lGerECtHj5KnGT2rY9kPNsb050WnXXDvZVuYz8Q7q0nJFOSqP
 
 TEST NETDATA BOT DISCORD
 cd /usr/libexec/netdata/plugins.d/
 ./alarm-notify test
-
-Copier le repo git sur votre vps puis lancez le fichier run.sh avec la commande :  
-sudo bash run.sh
+> c876ecd38173e197aadc4e79a84919bf1e200b89

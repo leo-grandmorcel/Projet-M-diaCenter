@@ -1,2 +1,2 @@
-sudo bash preset.sh -u paul -n "media-center"
-sudo bash Setup.sh -m -e paul.vayssier@ynov.com -n "media-center.me"
+sudo bash Preset.sh -u paul -n "media-center"
+sudo bash Setup.sh -m -n -c -e paul.vayssier@ynov.com -d "media-center.me"
