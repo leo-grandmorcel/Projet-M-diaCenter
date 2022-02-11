@@ -19,7 +19,8 @@ sudo bash Setup.sh -m -n -c -e <adressemail> -d <"nomdedomaine">
 Vous devez donc avoir un accès root ou administrateur sur votre machine pour que le script s'éxecute correctement.
 
 Pour le script "preset.sh" Soyez sûr d'avoir le nom que vous voulez donner à votre machine, le nom du user que vous voulez créer.
-Pour le script "Setup.sh" Soyez sûr d'avoir le nom de domaine de votre serveur. Si vous utilisez certbot, il vous faudra une adresse mail pour le certificat, et le nom de domaine. Enfin, assurez vous que votre application web écoute sur le port 80.
+Pour le script "Setup.sh" Soyez sûr d'avoir le nom de domaine de votre serveur. Si vous utilisez certbot, il vous faudra une adresse mail pour le certificat, et le nom de domaine.  
+Enfin, assurez vous que votre application web écoute sur le port 80.
 
 
 Que faire après ?
