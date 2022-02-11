@@ -21,6 +21,12 @@ Vous devez donc avoir un accès root ou administrateur sur votre machine pour qu
 Pour le script "preset.sh" Soyez sûr d'avoir le nom que vous voulez donner à votre machine, le nom du user que vous voulez créer.
 Pour le script "Setup.sh" Soyez sûr d'avoir le nom de domaine de votre serveur. Si vous utilisez certbot, il vous faudra une adresse mail pour le certificat, et le nom de domaine.
 
+
+Que faire après ?
+=======
+
+Une fois la manipulation effectuée vous n'avez plus qu'à importer votre application web sur la machine et la faire tourner puis rendez vous sur votre navigateur et rentrez https://"votrenomdedomaine" pour accéder à votre application. 
+
 Télécharger le dossier git
 =======
 
