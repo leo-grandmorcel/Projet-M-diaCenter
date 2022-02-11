@@ -27,3 +27,9 @@ Schéma de la solution
 ===
 
 ![Schéma d'automatisation de serveur](Schéma.PNG "Solution")
+
+
+Sécurité
+===
+
+Pour plus de sécurité nous avons aussi mis en place le service fail2ban qui permet d'éviter les attaques par déni de service ou de ralentir les tentatives de brute force.
