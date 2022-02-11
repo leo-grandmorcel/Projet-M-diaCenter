@@ -25,7 +25,8 @@ Pour le script "Setup.sh" Soyez sûr d'avoir le nom de domaine de votre serveur.
 Que faire après ?
 =======
 
-Une fois la manipulation effectuée vous n'avez plus qu'à importer votre application web sur la machine et la faire tourner puis rendez vous sur votre navigateur et rentrez https://"votrenomdedomaine" pour accéder à votre application. 
+Une fois la manipulation effectuée vous n'avez plus qu'à importer votre application web sur la machine et la faire tourner puis rendez vous sur votre navigateur et rentrez https://"votrenomdedomaine" pour accéder à votre application.  
+> Dans un soucis de sécurité l'outils netdata est installé lors de la configuration, il permet de surveiller l'état de la machine et est accessible sur votre navigateur si vous rentrez http://"votrenomdedomaine":19999
 
 Télécharger le dossier git
 =======
