@@ -1,7 +1,7 @@
 Monitoring
 ===
 
-L'outils utilisé est netdata et il est accessible sur http://"nomdedomaine":19999
+L'outils utilisé est netdata et il est accessible sur http://&lt;nomdedomaine>:19999
 
 Netdata permet de surveiller l'état de la RAM, du CPU, du disque et de beaucoup d'autres éléments de la machine.  
 On a paramétré netdata pour recevoir des notifications sur un serveur Discord si jamais un problème survenait.
