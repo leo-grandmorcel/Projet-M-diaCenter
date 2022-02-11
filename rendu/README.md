@@ -20,3 +20,10 @@ Les dossiers de log comme celui de nginx "var/log/nginx".
 Les dossiers de configuration.
 
 La base de données utilisée est entièrement sauvegardée.
+
+---
+
+Schéma de la solution
+===
+
+![Schéma d'automatisation de serveur](Schéma.PNG "Solution")
