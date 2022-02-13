@@ -4,17 +4,9 @@ Automatiser l'installation d'un serveur
 Pour lancer votre serveur web vous allez avoir besoin d'au minimum une machine sous Debian(11 de préférence).  
 Votre machine devra avoir au moins 4Go de ram et 1 CPU.
 
-<<<<<<< HEAD
-Télécharger le dossier git
-
-ssh-keygen -t rsa -b 4096
-ssh-copy-id <user>@<ip>
-scp -r <file> <user>@<ip>:<path>
-=======
 > Nous conseillons l'utilisations de machine virtuelles telles que des VPS pour l'installation du serveur.
 
 Ensuite, téléchargez simplement ce dépôt git sur votre machine et lancez les scripts "preset.sh" puis "Setup.sh" avec les commandes suivantes:
->>>>>>> e214d5b347821dbaaff4414b6a5b8efea5ffda73
 
 ```
 sudo bash Preset.sh -u <username> -n <"nomdelamachine">
