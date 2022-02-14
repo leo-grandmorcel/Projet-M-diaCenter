@@ -20,7 +20,7 @@ Vous devez donc avoir un accès root ou administrateur sur votre machine pour qu
 
 Pour le script "preset.sh" Soyez sûr d'avoir le nom que vous voulez donner à votre machine, le nom du user que vous voulez créer.
 Pour le script "Setup.sh" Soyez sûr d'avoir le nom de domaine de votre serveur. Si vous utilisez certbot, il vous faudra une adresse mail pour le certificat, et le nom de domaine.  
-Enfin, assurez vous que votre application web écoute sur le port 80.
+Enfin, assurez vous que votre application web écoute sur le port 5000.
 
 
 Que faire après ?
