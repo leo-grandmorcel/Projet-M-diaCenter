@@ -67,11 +67,11 @@ while getopts ":hu:n:" option; do
 done
 
 pinger
-apt-get update
-apt-get install -y sudo
+apt-get -y -q update
+apt-get install -y -q sudo
 
 while true; do
-    read -p "Reboot to save all changes Y/N" yn
+    read -p "Reboot to save all changes Y/N :  " yn
     case $yn in
         [Yy]* ) reboot; break;;
         [Nn]* ) exit;;
