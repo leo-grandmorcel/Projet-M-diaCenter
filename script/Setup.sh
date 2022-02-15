@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 if [[ "$(id -u)" != "0" ]] ; then
 	echo "This script must be run as root."
@@ -76,7 +76,7 @@ while getopts ":hmnce:d:" option; do
 		e)
 			email=${OPTARG}
 			;;
-		n)
+		d)
 			domain=${OPTARG}
 		c)
 			if [ -n $email ] && [ -n $domain ]; then
