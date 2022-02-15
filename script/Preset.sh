@@ -1,7 +1,7 @@
 #!/bin/bash
 
 usage(){
-        echo "Usage : Checklist.sh [OPTION]
+        echo "Usage : Preset.sh [OPTION]
         Setup your machine 
         -h            Prints help message (this message)
         -u name       Create a new user and his directory.

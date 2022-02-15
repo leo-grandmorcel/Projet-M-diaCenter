@@ -24,8 +24,6 @@ netdata() {
 }
 
 #nginx
-
-#nginx
 nginx() {
 	apt-get install -y nginx snapd
 	apt-get remove -y certbot
@@ -44,7 +42,7 @@ nginx() {
 }
 
 usage() {
-    echo "Usage : Checklist.sh [OPTION]
+    echo "Usage : Setup.sh [OPTION]
     Setup your machine 
     -h            Prints help message (this message)
     -m		      Create a monitor with netdata and alert with discord
@@ -64,18 +62,10 @@ while getopts ":hmn:d:e:" option; do
 		e)
 			email=${OPTARG}
 			;;
-<<<<<<< HEAD:script/Setup.sh
-		d)
-			domain=${OPTARG}
-		c)
-			if [ -n $email ] && [ -n $domain ]; then
-				certbot
-=======
 		n)
 			if [[ -n $email ]]; then
 				domain=${OPTARG}
             	nginx
->>>>>>> 0e27be471a43c099accd5d6672ab88967bfeec0a:test/Setup.sh
 			else
 				log error "Option ${option} not recognized."
             	usage
