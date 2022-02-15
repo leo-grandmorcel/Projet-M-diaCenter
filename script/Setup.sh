@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 if [[ "$(id -u)" != "0" ]] ; then
 	echo "This script must be run as root."
@@ -24,8 +24,6 @@ netdata() {
 }
 
 #nginx
-
-#nginx
 nginx() {
 	apt-get install -y nginx snapd
 	apt-get remove -y certbot
@@ -44,7 +42,7 @@ nginx() {
 }
 
 usage() {
-    echo "Usage : Checklist.sh [OPTION]
+    echo "Usage : Setup.sh [OPTION]
     Setup your machine 
     -h            Prints help message (this message)
     -m		      Create a monitor with netdata and alert with discord
