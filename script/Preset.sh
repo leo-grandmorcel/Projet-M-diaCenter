@@ -13,19 +13,20 @@ user(){
         useradd -m -s /bin/bash $newuser 
         usermod -aG dev $newuser 
         usermod -aG sudo $newuser
-        passwd $newuser
         echo "User $newuser added."
 }
 
 pinger(){
-        ping -q -c 4 1.1.1.1 &> /dev/null
-        if [ $? != 0 ] then
-                echo "No internet connexion."
-        fi
-        ping -q -c 4 google.com &> /dev/null
-        if [ $? != 0 ] then
-                echo "No resolution name in ping google.com"   
-        fi
+    ping -q -c 4 1.1.1.1 &> /dev/null
+    if [ $# != 0 ]
+    then
+        echo "No internet connexion."
+    fi
+    ping -q -c 4 google.com &> /dev/null
+    if [ $# != 0 ]
+    then
+        echo "No resolution name in ping google.com"
+    fi
 }
 
 namer(){
@@ -65,8 +66,8 @@ while getopts ":hu:n:" option; do
 done
 
 pinger
-apt-get update
-apt-get install -y sudo
+apt-get -qq update
+apt-get install -y -qq sudo
 
 while true; do
         read -p "Reboot to save all changes Y/N" yn

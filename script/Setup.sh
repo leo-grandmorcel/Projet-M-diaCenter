@@ -25,16 +25,16 @@ netdata() {
 
 #nginx
 nginx() {
-	apt-get install -y nginx snapd
-	apt-get remove -y certbot
+	apt-get install -y -qq nginx snapd
+	apt-get remove -y -qq certbot
 	snap install core
 	snap refresh core
 	snap install --classic certbot
 	ln -s /snap/bin/certbot /usr/bin/certbot
 	touch /etc/nginx/sites-available/"$domain".conf
 	rm /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-	sed -i "s/\!\!\!domainname\!\!\!/$domain/g" nginx.conf.skeleton
-	cat nginx.conf.skeleton > /etc/nginx/sites-available/"$domain".conf
+	sed -i "s/\!\!\!domainname\!\!\!/$domain/g" .nginx.conf.skeleton
+	cat .nginx.conf.skeleton > /etc/nginx/sites-available/"$domain".conf
 	certbot certonly --nginx -m $email -d $domain -q --agree-tos
 	ln /etc/nginx/sites-available/$domain.conf /etc/nginx/sites-enabled/
 	rm -r /var/www/html
@@ -80,11 +80,12 @@ while getopts ":hmn:d:e:" option; do
     esac
 done
 
+
 while true; do
-    read -p "Reboot to save all changes Y/N" yn
-    case $yn in
-        [Yy]* ) reboot; break;;
-        [Nn]* ) exit;;
-        * ) echo "Please answer yes or no.";;
-    esac
+        read -p "Reboot to save all changes Y/N" yn
+        case $yn in
+                [Yy]* ) reboot; break;;
+                [Nn]* ) exit;;
+                * ) echo "Please answer yes or no.";;
+        esac
 done
