@@ -28,3 +28,15 @@ Que faire après ?
 
 Une fois la manipulation effectuée vous n'avez plus qu'à importer votre application web sur la machine et la faire tourner puis rendez vous sur votre navigateur et rentrez https://&lt;votrenomdedomaine> pour accéder à votre application.  
 > Dans un soucis de sécurité l'outils netdata est installé lors de la configuration, il permet de surveiller l'état de la machine et est accessible sur votre navigateur si vous rentrez http://&lt;votrenomdedomaine>:19999
+
+---
+
+Si vous voulez de plus ample modifications sur votre machine un script pour installer le service fail2ban est disponible, vous pouvez le lancer avec la commande:
+```
+sudo bash fail2ban.sh
+```
+
+Un script de backup est proposé aussi avec la commande:
+```
+sudo bash Save.sh
+```
